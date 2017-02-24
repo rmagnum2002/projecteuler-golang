@@ -13,20 +13,13 @@ func main() {
 
 	for i := max; i >= min; i-- {
 		for n := max; n >= min; n-- {
-			var number, length int
+			var number int
 			var nts string
 
 			number = i * n
 			nts = strconv.Itoa(number)
-			length = len(nts)
-
-			if length%2 == 0 {
-				var first, last string
-				first = nts[0:3]
-				last = nts[3:]
-				if first == Reverse(last) {
-					candidates = append(candidates, number)
-				}
+			if nts == Reverse(nts) {
+				candidates = append(candidates, number)
 			}
 		}
 	}
